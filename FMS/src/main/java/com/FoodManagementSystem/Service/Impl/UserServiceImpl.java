@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
         User user = userRepo.findByUsername(userName);
         if(user != null) {
             if(user.getPassword().equals(password)) {
-                return user.getRole().equalsIgnoreCase("OWNER") ? "Successfully Login As OWNER" : "Successfully Login";
+                return user.getRole().equalsIgnoreCase("ADMIN") ? "Successfully Login As ADMIN" : "Successfully Login";
             } else {
                 return "Invalid Password Entered";
             }

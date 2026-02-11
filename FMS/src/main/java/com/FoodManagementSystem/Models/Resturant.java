@@ -19,7 +19,8 @@ public class Resturant {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer rid;
 
-    @NotNull
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer ownerId;
 
     @NotBlank(message = "Restaurant name is mandatory")

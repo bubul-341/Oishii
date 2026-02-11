@@ -18,7 +18,7 @@
                 <div class="option">
                 <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
                 <li><a href="/search"><i class="fa-solid fa-magnifying-glass"></i> Search</a></li>
-                <li><a href="/help"><i class="fa-solid fa-circle-info"></i> Help</a></li>
+                <li><a href="help.html"><i class="fa-solid fa-circle-info"></i> Help</a></li>
                 <li><a href="login.html"><i class="fa-regular fa-user"></i> Sign In</a></li>
                 <li><a href="/cart"><i class="fa-solid fa-cart-arrow-down"></i> Cart</a></li>
                 </div>
@@ -42,7 +42,7 @@
                 </div>
             </div>                       
         </section>
-        <br>
+        <br><br>
         <section class="food-suggestion">
             <h2>Inspiration For Your Next Meal</h2>
             <div class="food-list">
@@ -94,6 +94,28 @@
             </div>
         </section>
     </main>
+
+    <div id="search-overlay" class="search-overlay">
+    <div class="search-container">
+        <input type="text" placeholder="Search for organic meals..." id="search-input">
+        <button id="close-search"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    </div>
+
+<div id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-content">
+        <p>Your cart is empty. Let's add some green!</p>
+    </div>
+    <div class="cart-footer">
+        <button class="checkout-btn">Checkout</button>
+    </div>
+</div>
+<div id="body-overlay" class="body-overlay"></div>
+
 
     <script src="script.js"></script>
 </body>

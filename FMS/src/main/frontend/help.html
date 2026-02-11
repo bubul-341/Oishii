@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | LeafBox</title>
+    <script src="https://kit.fontawesome.com/e3890e647b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        
+        body ,html{ background-color: #e9ecee; } /* Prevents whole page scroll */
+        .navbar ul li{font-weight: 600;}
+
+        .help-container {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .help-box {
+            display: flex;
+            background: #fff;
+            height: 85vh;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        /* Sidebar Styling */
+        .help-sidebar {
+            width: 280px;
+            background-color: #edf1f3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-right: 1px solid #dee3e6;
+        }
+
+        .help-sidebar ul { list-style: none; }
+
+        .help-sidebar li {
+            padding: 18px 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: #535665;
+            transition: all 0.2s ease-in-out;
+            border-left: 4px solid transparent;
+        }
+
+        /* Hover & Active Styles */
+        .help-sidebar li:hover {
+            color: #1e4d3b;
+            background-color: #e4e9ec;
+            padding-left: 35px;
+        }
+
+        .help-sidebar li.active {
+            background-color: #fff;
+            color: #1e4d3b;
+            border-left: 4px solid #1e4d3b;
+        }
+
+        .partner-btn-container {
+            padding: 20px;
+        }
+
+        .partner-link {
+            display: block;
+            background-color: #1e4d3b;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .partner-link:hover { background-color: #2a634d; }
+
+        /* Content Area */
+        .help-content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: scroll; /* Allows scrolling but we hide the bar below */
+            background: #fff;
+        }
+
+        /* HIDE SCROLLBAR for Chrome, Safari and Opera */
+        .help-content::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* HIDE SCROLLBAR for IE, Edge and Firefox */
+        .help-content {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Hide sections by default */
+        .help-section { 
+            display: none; 
+            animation: fadeIn 0.4s ease;
+        }
+
+        /* Show active section */
+        .help-section.active-content { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .category-title { font-size: 26px; margin-bottom: 25px; color: #1e4d3b; }
+
+        /* FAQ Items */
+        .faq-item { border-bottom: 1px solid #eee; }
+        .faq-header {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            color: #3d4152;
+            font-weight: 500;
+        }
+        .faq-header i { font-size: 12px; transition: 0.3s; }
+        .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-body p { padding: 0 0 20px 0; color: #686b78; font-size: 14px; line-height: 1.6; }
+
+        .faq-item.open .faq-body { max-height: 200px; }
+        .faq-item.open .faq-header i { transform: rotate(180deg); }
+        .faq-item.open .faq-header { color: #1e4d3b; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><div class="logo">
+                    <a href="index.html"></a><img src="assets/leafbox.png" alt="LeafBox Logo">
+                </div></li>
+                <div class="option">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="/search"><i class="fa-solid fa-magnifying-glass"></i> Search</a></li>
+                <li><a href="help.html"><i class="fa-solid fa-circle-info"></i> Help</a></li>
+                <li><a href="login.html"><i class="fa-regular fa-user"></i> Sign In</a></li>
+                <li><a href="/cart"><i class="fa-solid fa-cart-arrow-down"></i> Cart</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="help-container">
+        <div class="help-box">
+            <aside class="help-sidebar">
+                <ul id="sidebar-menu">
+                    <li class="active" data-target="onboarding">Partner Onboarding</li>
+                    <li data-target="legal">Legal & Terms</li>
+                    <li data-target="faqs">General FAQs</li>
+                    <li data-target="payments">Payments</li>
+                </ul>
+
+
+            </aside>
+
+            <section class="help-content" id="help-content">
+                
+                <div id="onboarding" class="help-section active-content">
+                    <h1 class="category-title">Partner Onboarding</h1>
+                    <div class="faq-item">
+                        <div class="faq-header"><span>How to become a LeafBox partner?</span><i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-body"><p>Click the "Join as a Partner" button in the sidebar to start your application.</p>
+                        <div class="partner-btn-container">
+                        <a href="partner-registration.html" class="partner-link">Join as a Partner</a>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header"><span>What are the mandatory documents needed to list my restaurant on LeafBox?</span><i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-body"><p>-  Copies of the below documents are mandatory</p></div>
+                        <div class="faq-body"><p>-  FSSAI Licence OR FSSAI Acknowledgement</p></div>
+                        <div class="faq-body"><p>-  Pan Card</p></div>
+                        <div class="faq-body"><p>-  GSTIN Certificate</p></div>
+                        <div class="faq-body"><p>-  Cancelled Cheque OR bank Passbook</p></div>
+                        <div class="faq-body"><p>-  Menu</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header"><span>After I submit all documents, how long will it take for my restaurant to go live on LeafBox?</span><i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-body"><p>After all mandatory documents have been received and verified it takes upto 7-10 working days for the onboarding to be completed and make your restaurant live on the platform.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header"><span>What is this one time Onboarding fees? Do I have to pay for it while registering?</span><i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-body"><p>This is a one-time fee charged towards the system & admin costs incurred during the onboarding process. It is deducted from the weekly payouts after you start receiving orders from LeafBox.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header"><span>How much commission will I be charged by LeafBox?</span><i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-body"><p>The commission charges vary for different cities. You will be able to see the commission applicable for you once the preliminary onboarding details have been filled.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header"><span>I don’t have an FSSAI licence for my restaurant. Can it still be onboarded?</span><i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-body"><p>FSSAI licence is a mandatory requirement according to the government’s policies. However, if you are yet to receive the licence at the time of onboarding, you can proceed with the acknowledgement number which you will have received from FSSAI for your registration.</p></div>
+                    </div>
+                </div>
+
+                <div id="legal" class="help-section">
+                    <h1 class="category-title">Legal & Terms</h1>
+                    <div class="faq-item">
+                        <div class="faq-header"><span>Privacy Policy</span><i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-body"><p>We ensure all partner and customer data is strictly protected under our 2026 privacy guidelines.</p></div>
+                    </div>
+                </div>
+
+                <div id="faqs" class="help-section">
+                    <h1 class="category-title">General FAQs</h1>
+                    <div class="faq-item">
+                        <div class="faq-header"><span>Is everything plastic-free?</span><i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-body"><p>Yes! LeafBox uses 100% biodegradable packaging for every single order.</p></div>
+                    </div>
+                </div>
+
+                <div id="payments" class="help-section">
+                    <h1 class="category-title">Payments</h1>
+                    <div class="faq-item">
+                        <div class="faq-header"><span>Payout Schedule</span><i class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-body"><p>Partners receive payouts every Friday for the previous week's sales.</p></div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+    <div id="search-overlay" class="search-overlay">
+    <div class="search-container">
+        <input type="text" placeholder="Search for organic meals..." id="search-input">
+        <button id="close-search"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    </div>
+
+<div id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-content">
+        <p>Your cart is empty. Let's add some green!</p>
+    </div>
+    <div class="cart-footer">
+        <button class="checkout-btn">Checkout</button>
+    </div>
+</div>
+
+    <script>
+        // 1. Accordion Logic (Dropdowns)
+        document.querySelectorAll('.faq-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('open');
+            });
+        });
+
+        // 2. Sidebar Navigation (Switching Sections)
+        const sidebarItems = document.querySelectorAll('.help-sidebar li');
+        const sections = document.querySelectorAll('.help-section');
+
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove active class from all sidebar items
+                sidebarItems.forEach(li => li.classList.remove('active'));
+                // Add active class to clicked item
+                item.classList.add('active');
+
+                // Hide all sections
+                sections.forEach(section => section.classList.remove('active-content'));
+
+                // Show only the targeted section
+                const targetId = item.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active-content');
+                
+                // Reset scroll to top of the content area
+                document.getElementById('help-content').scrollTop = 0;
+            });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+    // Selectors
+    const searchLink = document.querySelector('a[href="/search"]');
+    const cartLink = document.querySelector('a[href="/cart"]');
+    const searchOverlay = document.getElementById('search-overlay');
+    const cartSidebar = document.getElementById('cart-sidebar');
+    const bodyOverlay = document.getElementById('body-overlay');
+    const closeSearch = document.getElementById('close-search');
+    const closeCart = document.getElementById('close-cart');
+
+    // Prevent default navigation for demo
+    const preventAction = (e) => e.preventDefault();
+
+    // Search Toggle
+    searchLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        searchOverlay.classList.add('active');
+        document.getElementById('search-input').focus();
+    });
+
+    closeSearch.addEventListener('click', () => {
+        searchOverlay.classList.remove('active');
+    });
+
+    // Cart Toggle
+    cartLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        cartSidebar.classList.add('active');
+        bodyOverlay.classList.add('active');
+    });
+
+    const hideCart = () => {
+        cartSidebar.classList.remove('active');
+        bodyOverlay.classList.remove('active');
+    };
+
+    closeCart.addEventListener('click', hideCart);
+    bodyOverlay.addEventListener('click', hideCart);
+
+    // Escape key to close everything
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+            searchOverlay.classList.remove('active');
+            hideCart();
+        }
+    });
+});
+    </script>
+
+</body>
+</html>

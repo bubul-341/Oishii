@@ -196,18 +196,17 @@
             title.innerText = "Welcome Back";
             subtitle.innerText = "Eat Clean. Pack Green.";
             toggleLink.innerHTML = 'Don\'t have an account? <a href="javascript:void(0)" onclick="toggleForms()">Create One</a>';
-        } else {
+            } else {
             // Switch to Sign Up
             loginForm.style.display = "none";
             signupForm.style.display = "block";
             title.innerText = "Join LeafBox";
             subtitle.innerText = "Start your healthy journey today.";
             toggleLink.innerHTML = 'Already have an account? <a href="javascript:void(0)" onclick="toggleForms()">Sign In</a>';
-    }
-}
- 
+            }
+        } 
         // Simple form handling for your API
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        document.getElementById('login-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
