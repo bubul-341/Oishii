@@ -1,4 +1,8 @@
 package com.FoodManagementSystem.Models;
 
-public class OrderStatus {
+public enum OrderStatus {
+    RECEIVED,
+    PREPARING,
+    DELIVERED,
+    CANCELLED
 }
